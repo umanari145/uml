@@ -1,0 +1,7 @@
+version: '3'
+services:
+  app:
+    image: plantuml/plantuml-server:jetty
+    tty: true
+    ports:
+      - "8080:8080"
