@@ -1,0 +1,21 @@
+@startuml
+title jwt
+ユーザー -> 認可サーバー: ユーザー、パスワード
+認可サーバー -> ユーザー: トークン
+note right: (login.php) ヘッダー＋ペイロード＋署名
+
+====
+
+ユーザー -> WEBサーバー:トークン
+
+group 認証OK
+  WEBサーバー -> ユーザー:ユーザー情報
+  note right: (data.php) トークンからjwtをデコード
+
+end
+
+group 認証NG
+  WEBサーバー -> ユーザー:エラー情報
+end
+
+@enduml

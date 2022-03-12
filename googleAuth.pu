@@ -1,0 +1,27 @@
+@startuml
+title googleを使ったOath
+group ログインセッションなし
+ユーザー -> WEBサーバー: googleロゴをクリック
+WEBサーバー -> 認可サーバー:　アカウント情報
+note right:(index.php + login.js) googleロゴをクリック
+
+認可サーバー -> WEBサーバー:トークン
+note right:googleログイン成功後、login.jsにトークンが返却される
+
+WEBサーバー -> 認可サーバー:トークン
+note right:内部(loginCheck.php)からGoogleにトークンを再度送信して、ユーザー情報を取得する。
+
+認可サーバー -> WEBサーバー:ユーザー情報(ユーザーID)
+note right:OKならsession登録してユーザー情報を返却
+
+WEBサーバー -> ユーザー:ログイン成功を返却
+note right:home画面を返却する
+end
+
+group ログインセッションあり
+WEBサーバー -> ユーザー:　home画面
+note right:セッションがある場合、home画面が表示
+
+end
+
+@enduml
