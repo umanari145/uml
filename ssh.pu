@@ -1,0 +1,30 @@
+@startuml
+title ssh認証
+クライアント -> クライアント: 秘密鍵(id_rsa)、\n公開鍵(id_rsa.pub)を作成。\nパスワードをつけることもできる
+note left: ssh-keygen -t rsa -T [ファイル名]
+
+クライアント -> サーバー: 公開鍵(id_rsa.pub)
+note right: scpで送るのが正解。GitHubだとテキストを直接貼り付けなど
+
+サーバー -> サーバー: authorized_keysに登録(この時点でid_rsa.pubを削除してもOK)
+note right: cat .ssh/id_rsa.pub >> .ssh/authorized_keys
+
+==実際の接続==
+
+クライアント -> サーバー: ログインリクエスト
+サーバー -> クライアント: 暗号
+note right: 公開鍵と乱数で暗号作成\nハッシュ値を作成
+
+サーバー -> サーバー:
+note right: fingerprintにハッシュ値を保存
+
+クライアント -> クライアント: 受け取ったら暗号を秘密鍵で複合化
+
+クライアント -> サーバー: ハッシュ値
+note right: ハッシュ値と登録されたハッシュ値を比較
+
+
+
+
+
+@enduml
