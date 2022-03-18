@@ -1,5 +1,5 @@
 @startuml
-title googleを使ったOath
+title google_Oath
 group ログインセッションなし
 ユーザー -> WEBサーバー: googleロゴをクリック
 WEBサーバー -> 認可サーバー:　アカウント情報

@@ -1,5 +1,5 @@
 @startuml
-title ssh認証
+title ssh
 クライアント -> クライアント: 秘密鍵(id_rsa)、\n公開鍵(id_rsa.pub)を作成。\nパスワードをつけることもできる
 note left: ssh-keygen -t rsa -T [ファイル名]
 
