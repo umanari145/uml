@@ -32,3 +32,4 @@ brew install graphviz
 - jwt.pu JWTの認証ロジック
 - nomaltoken.pu 通常のtoken認証のロジック
 - ssh.pu sshの仕組み
+- stateMachine.pu ステートマシーン(https://plantuml.com/ja/state-diagram)
