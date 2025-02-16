@@ -33,3 +33,15 @@ brew install graphviz
 - nomaltoken.pu 通常のtoken認証のロジック
 - ssh.pu sshの仕組み
 - stateMachine.pu ステートマシーン(https://plantuml.com/ja/state-diagram)
+
+## mermaidによるuml
+マークダウンによるuml図の作成が可能
+
+vscodeやcursorのプラグインで表示が容易<br>
+- Markdown Preview Mermaid Support
+
+
+- mermaid
+    - jwt.md
+    - session_cookie.md
+    - token.md
