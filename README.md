@@ -45,3 +45,5 @@ vscodeやcursorのプラグインで表示が容易<br>
     - jwt.md
     - session_cookie.md
     - token.md
+    - auth.md
+    - oauth.md
