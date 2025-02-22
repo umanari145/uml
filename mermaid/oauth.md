@@ -3,7 +3,7 @@ sequenceDiagram
     actor User
     participant Client
     participant OAuth as Google OAuth
-    participant ResourceServer as Google Resource Server
+    participant ResourceServer
 
     User->>Client: POST
     Client->>User: Googleログインボタン表示
